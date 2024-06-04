@@ -17,11 +17,11 @@ This website follows the [FAIR](https://www.go-fair.org/fair-principles/) and [C
 
 ### Main Project
 
-[About your project]
+TBD
 
 ### Results
 
-[Results]
+TBD
 
 ### Daily Logs
 

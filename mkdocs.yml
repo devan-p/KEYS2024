@@ -5,8 +5,8 @@ site_author: Devan Patel
 site_url: https://devan-p.github.io/KEYS2024/ 
 
 # Footer
-repo_name: mkdocs-material-template
-repo_url: https://github.com/tyson-swetnam/mkdocs-material-template
+repo_name: KEYS2024
+repo_url: https://github.com/devan-p/KEYS2024
 edit_uri: edit/main/docs/
 # Copyright
 copyright: 'Copyright &copy; 2024 Arizona Board of Regents'
