@@ -11,8 +11,8 @@ Advisor: [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orci
 
 ## About
 
-[Add details about your internship here]
- 
+Devan Patel is a rising senior at Basis Scottsdale. During the summer of 2024, he is interning at the University of Arizona through BIO5 Institute's [KEYS program](https://keys.arizona.edu/).
+
 This website follows the [FAIR](https://www.go-fair.org/fair-principles/) and [CARE](https://www.gida-global.org/care) data principles and hopes to help further open science. 
 
 ### Main Project
