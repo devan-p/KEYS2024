@@ -25,4 +25,4 @@ TBD
 
 ### Daily Logs
 
-[link to another file called logbook.md](logbook.md)
+[link to daily logs](logbook.md)
