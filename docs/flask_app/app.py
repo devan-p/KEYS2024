@@ -3,4 +3,4 @@ import openai
 
 app = Flask(__name__)
 
-openai.api_key = 'ADD KEY HEREYY'  # Replace with your actual OpenAI API key
+openai.api_key = 'ADD KEY HERE'  # Replace with your actual OpenAI API key
