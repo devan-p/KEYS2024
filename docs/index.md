@@ -1,6 +1,5 @@
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0) 
 
-
 # Introduction
 
 <this is an invisible comment -- add your orcid id after https://orcid.org/ below>
@@ -26,7 +25,6 @@ TBD
 ### Daily Logs
 
 [link to daily logs](logbook.md)
-
 
 <style>
 /* Add this CSS to style the chatbot icon and window */
@@ -91,17 +89,17 @@ TBD
 }
 </style>
 
+<div id="chatbot-icon" onclick="toggleChatbot()">
+    <i class="fa fa-comments"></i>
+</div>
+<div id="chatbot-window">
+    <div id="chatbot-header">
+        <span>Chat with us!</span>
+        <button onclick="closeChatbot()">X</button>
+    </div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+</div>
 
- <div id="chatbot-icon" onclick="toggleChatbot()">
-       <i class="fa fa-comments"></i>
-   </div>
-   <div id="chatbot-window">
-       <div id="chatbot-header">
-           <span>Chat with us!</span>
-           <button onclick="closeChatbot()">X</button>
-       </div>
-       <div id="chatbot-messages"></div>
-       <input type="text" id="chatbot-input" placeholder="Type your message..." />
-       <button onclick="sendMessage()">Send</button>
-   </div>
-
+<script src="javascripts/chatbot.js"></script>
