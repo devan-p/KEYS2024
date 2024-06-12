@@ -64,6 +64,12 @@ GPT-4o
 >>  ```
 
 
+### 6/11/2024
+
+Joined morning standup call. Updated Assignment 1 page with my KEYS introduction assignment. I spent most of the day working on the chatbot. I made the IU look better and worked on the actual chat functionality. I got the bot to recieve and send messages to the user. I tried getting the chatbot to appear on all the mkdocs pages of my website, however, I kept running into problems.
+
+
+
 
 
 
