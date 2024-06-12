@@ -26,86 +26,24 @@ TBD
 
 [link to daily logs](logbook.md)
 
-<style>
-/* Add this CSS to style the chatbot icon and window */
-#chatbot-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #4051B5;
-    color: black;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 14px; /* Adjust the font size as needed */
-    color: white; /* Adjust the text color as needed */
-}
-
-#chatbot-window {
-    display: none;
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    height: 400px;
-    background-color: grey;
-    border: 1px solid #4051B5;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    
-}
-
-#chatbot-header {
-    background-color: #4051B5;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#chatbot-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    border-top: 1px solid #4051B5;
-
-}
-
-#chatbot-input {
-    border: none;
-    border-top: 1px solid black;
-    padding: 10px;
-    width: calc(100% - 60px);
-
-}
-
-#chatbot-window button {
-    border: none;
-    background-color: #4051B5;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-
-}
-</style>
-
-<div id="chatbot-icon" onclick="toggleChatbot()">
-    <span>Chat!</span>
-</div>
-<div id="chatbot-window">
-    <div id="chatbot-header">
-        <span>Have any questions?</span>
-        <button onclick="closeChatbot()">X</button>
+<!-- Include the chatbot HTML -->
+<div id="chatbot-container">
+    <div id="chatbot-icon" onclick="toggleChatbot()">
+        <span>Chat!</span>
     </div>
-    <div id="chatbot-messages"></div>
-    <input type="text" id="chatbot-input" placeholder="Type your message..." />
-    <button onclick="sendMessage()">Send</button>
+    <div id="chatbot-window">
+        <div id="chatbot-header">
+            <span>Have any questions?</span>
+            <button onclick="closeChatbot()">X</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
 </div>
 
-<script src="javascripts/chatbot.js"></script>
+<!-- Include the CSS file -->
+<link rel="stylesheet" type="text/css" href="chatbot.css">
+
+<!-- Include the JavaScript file -->
+<script src="chatbot.js"></script>

@@ -102,6 +102,7 @@ markdown_extensions:
   - footnotes
   - meta
   - md_in_html
+  - mdx_include
   - toc:
       permalink: true
   - pymdownx.arithmatex:
