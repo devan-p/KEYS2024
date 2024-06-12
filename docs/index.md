@@ -34,13 +34,15 @@ TBD
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #007bff;
-    color: white;
+    background-color: #4051B5;
+    color: black;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size: 14px; /* Adjust the font size as needed */
+    color: white; /* Adjust the text color as needed */
 }
 
 #chatbot-window {
@@ -50,15 +52,15 @@ TBD
     right: 20px;
     width: 300px;
     height: 400px;
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: grey;
+    border: 1px solid #4051B5;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
 }
 
 #chatbot-header {
-    background-color: #007bff;
+    background-color: #4051B5;
     color: white;
     padding: 10px;
     display: flex;
@@ -70,19 +72,19 @@ TBD
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #4051B5;
 }
 
 #chatbot-input {
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid black;
     padding: 10px;
     width: calc(100% - 60px);
 }
 
 #chatbot-window button {
     border: none;
-    background-color: #007bff;
+    background-color: #4051B5;
     color: white;
     padding: 10px;
     cursor: pointer;
@@ -90,11 +92,11 @@ TBD
 </style>
 
 <div id="chatbot-icon" onclick="toggleChatbot()">
-    <i class="fa fa-comments"></i>
+    <span>Chat!</span>
 </div>
 <div id="chatbot-window">
     <div id="chatbot-header">
-        <span>Chat with us!</span>
+        <span>Have any questions?</span>
         <button onclick="closeChatbot()">X</button>
     </div>
     <div id="chatbot-messages"></div>

@@ -1,13 +1,15 @@
-// Add this JavaScript to handle chatbot interaction
+// Function to toggle the visibility of the chatbot window
 function toggleChatbot() {
     const chatbotWindow = document.getElementById('chatbot-window');
     chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' ? 'flex' : 'none';
 }
 
+// Function to close the chatbot window
 function closeChatbot() {
     document.getElementById('chatbot-window').style.display = 'none';
 }
 
+// Function to send a message
 async function sendMessage() {
     const inputField = document.getElementById('chatbot-input');
     const message = inputField.value;
@@ -26,13 +28,19 @@ async function sendMessage() {
             body: JSON.stringify({ message }),
         });
 
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.statusText}`);
+        }
+
         const data = await response.json();
         appendMessage('Bot: ' + data.response);
     } catch (error) {
+        console.error('Error communicating with server:', error);
         appendMessage('Bot: Error communicating with server.');
     }
 }
 
+// Function to append a message to the chat window
 function appendMessage(message) {
     const chatbox = document.getElementById('chatbot-messages');
     const messageElement = document.createElement('div');
