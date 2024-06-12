@@ -48,3 +48,10 @@ function appendMessage(message) {
     chatbox.appendChild(messageElement);
     chatbox.scrollTop = chatbox.scrollHeight;
 }
+
+// Add event listener for Enter key
+document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});

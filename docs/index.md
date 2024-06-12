@@ -57,6 +57,7 @@ TBD
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
+    
 }
 
 #chatbot-header {
@@ -73,6 +74,7 @@ TBD
     padding: 10px;
     overflow-y: auto;
     border-top: 1px solid #4051B5;
+
 }
 
 #chatbot-input {
@@ -80,6 +82,7 @@ TBD
     border-top: 1px solid black;
     padding: 10px;
     width: calc(100% - 60px);
+
 }
 
 #chatbot-window button {
@@ -88,6 +91,7 @@ TBD
     color: white;
     padding: 10px;
     cursor: pointer;
+
 }
 </style>
 
