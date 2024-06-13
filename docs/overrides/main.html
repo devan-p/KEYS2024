@@ -1,11 +1,134 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <style>
+        /* Add this CSS to style the chatbot icon and window */
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4051B5;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px; /* Adjust the font size as needed */
+            color: white; /* Adjust the text color as needed */
+        }
 
-{% block content %}
-{% if page.nb_url %}
-    <a href="{{ page.nb_url }}" title="Download Notebook" class="md-content__button md-icon">
-        {% include ".icons/material/download.svg" %}
-    </a>
-{% endif %}
+        #chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: grey;
+            border: 1px solid #4051B5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
 
-{{ super() }}
-{% endblock content %}
+        #chatbot-header {
+            background-color: #4051B5;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-top: 1px solid #4051B5;
+        }
+
+        #chatbot-input {
+            border: none;
+            border-top: 1px solid black;
+            padding: 10px;
+            width: calc(100% - 60px);
+            border-radius: 10px; /* Rounded edges */
+        }
+
+        #chatbot-window button {
+            border: none;
+            background-color: #4051B5;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your site header and navigation here -->
+    {% extends "base.html" %}
+    {% block content %}
+    {{ super() }}
+    <!-- Include the chatbot HTML -->
+    <div id="chatbot-container">
+        <div id="chatbot-icon" onclick="toggleChatbot()">
+            <span>Chat!</span>
+        </div>
+        <div id="chatbot-window">
+            <div id="chatbot-header">
+                <span>Have any questions?</span>
+                <button onclick="closeChatbot()">X</button>
+            </div>
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Type your message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        // Function to toggle the visibility of the chatbot window
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbot-window');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' ? 'flex' : 'none';
+        }
+    
+        // Function to close the chatbot window
+        function closeChatbot() {
+            document.getElementById('chatbot-window').style.display = 'none';
+        }
+    
+        // Function to send a message
+        async function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value;
+            input.value = '';
+            appendMessage(message);
+            // You might want to add your logic for sending the message to the server here
+        }
+    
+        // Function to append a message to the chat window
+        function appendMessage(message) {
+            const messages = document.getElementById('chatbot-messages');
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messages.appendChild(messageElement);
+        }
+    
+        // Add event listener for Enter key on the input field
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+    {% endblock %}<!-- Include the chatbot script -->
+
+    </body>
+    </html>

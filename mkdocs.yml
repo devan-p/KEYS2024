@@ -36,10 +36,10 @@ theme:
   name: 'material'
 
   extra_javascript:
-    - chatbot.js
+    - docs/chatbot.js
 
   extra_css:
-    - chatbot.css
+    - dpcs/chatbot.css
     - stylesheets/extra.css
 
   # 404 page
@@ -75,7 +75,7 @@ theme:
     - content.code.copy
   # Default values, taken from mkdocs_theme.yml
   language: en
-  # custom_dir: 'overrides'
+  custom_dir: 'docs/overrides'
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: white)"
@@ -92,6 +92,8 @@ theme:
         name: Switch to system preference
 # Options
 extra:
+  chatbot: docs/chatbot.html
+
   social:
 #    - icon: fontawesome/brands/github
 #      link: https://github.com/[your-githhub-username]

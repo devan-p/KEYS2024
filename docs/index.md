@@ -43,7 +43,7 @@ TBD
 </div>
 
 <!-- Include the CSS file -->
-<link rel="stylesheet" type="text/css" href="chatbot.css">
+<!-- <link rel="stylesheet" type="text/css" href="chatbot.css"> -->
 
 <!-- Include the JavaScript file -->
-<script src="chatbot.js"></script> -->
+<!-- <script src="chatbot.js"></script>  -->
