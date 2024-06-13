@@ -92,15 +92,41 @@
     </div>
     <script>
         // Function to toggle the visibility of the chatbot window
-        function toggleChatbot() {
-            const chatbotWindow = document.getElementById('chatbot-window');
-            chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' ? 'flex' : 'none';
+// Function to toggle the visibility of the chatbot window
+function toggleChatbot() {
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const computedDisplay = window.getComputedStyle(chatbotWindow).display;
+    if (computedDisplay === 'none') {
+        chatbotWindow.style.display = 'flex';
+        localStorage.setItem('chatbotState', 'open');
+    } else {
+        chatbotWindow.style.display = 'none';
+        localStorage.setItem('chatbotState', 'closed');
+    }
+}
+
+function closeChatbot() {
+    document.getElementById('chatbot-window').style.display = 'none';
+    localStorage.setItem('chatbotState', 'closed');
+}
+
+// Add event listener for Enter key on the input field
+document.addEventListener('DOMContentLoaded', function() {
+    // Set the chatbot state based on the stored state
+    const chatbotState = localStorage.getItem('chatbotState');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    if (chatbotState === 'open') {
+        chatbotWindow.style.display = 'flex';
+    } else {
+        chatbotWindow.style.display = 'none';
+    }
+
+    document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendMessage();
         }
-    
-        // Function to close the chatbot window
-        function closeChatbot() {
-            document.getElementById('chatbot-window').style.display = 'none';
-        }
+    });
+});
     
         // Function to send a message
         async function sendMessage() {
@@ -118,15 +144,36 @@
             messageElement.textContent = message;
             messages.appendChild(messageElement);
         }
-    
-        // Add event listener for Enter key on the input field
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
-            });
-        });
+
+    window.addEventListener('load', function() {
+    const chatbotState = localStorage.getItem('chatbotState');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    if (chatbotState === 'open') {
+        chatbotWindow.style.display = 'flex';
+    } else {
+        chatbotWindow.style.display = 'none';
+    }
+});
+
+
+
+    // Create a MutationObserver instance
+    const observer = new MutationObserver(function() {
+        // Set the chatbot state based on the stored state
+        const chatbotState = localStorage.getItem('chatbotState');
+        const chatbotWindow = document.getElementById('chatbot-window');
+        if (chatbotState === 'open') {
+            chatbotWindow.style.display = 'flex';
+        } else {
+            chatbotWindow.style.display = 'none';
+        }
+    });
+
+    // Start observing the document with the configured parameters
+    observer.observe(document, { childList: true, subtree: true });
+
+
+
     </script>
     {% endblock %}<!-- Include the chatbot script -->
 
