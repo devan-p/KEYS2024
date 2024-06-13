@@ -27,7 +27,7 @@ TBD
 [link to daily logs](logbook.md)
 
 <!-- Include the chatbot HTML -->
-<div id="chatbot-container">
+<!-- <div id="chatbot-container">
     <div id="chatbot-icon" onclick="toggleChatbot()">
         <span>Chat!</span>
     </div>
@@ -46,4 +46,4 @@ TBD
 <link rel="stylesheet" type="text/css" href="chatbot.css">
 
 <!-- Include the JavaScript file -->
-<script src="chatbot.js"></script>
+<script src="chatbot.js"></script> -->
