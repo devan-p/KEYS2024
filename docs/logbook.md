@@ -69,7 +69,7 @@ GPT-4o
 Joined morning standup call. Updated Assignment 1 page with my KEYS introduction assignment. I spent most of the day working on the chatbot. I made the IU look better and worked on the actual chat functionality. I got the bot to recieve and send messages to the user. I tried getting the chatbot to appear on all the mkdocs pages of my website, however, I kept running into problems.
 
 
-### 6/11/2024
+### 6/12/2024
 
 This morning we had science literacy seminars. We learned about oncology and dentistry. After our lectures, we discussed the introduction portion of our posters (what to do and not to do). I spend the afternoon trying to figure out how to get my chatbot to appear on every page of the website instead of just the markdown pages I add html to. I talked with Dr. Swetnam about this problem and he shared some resources with me: [Chat bot in website](https://github.com/CyVerse-learning-materials/cyverse_mooc/tree/mkdocs-usa){target=_blank}, [CyVerse GPT API Website](https://github.com/cyverse/cyverse-gpt/tree/main){target=_blank}. I spent the rest of the afternoon reading aboout embedding .js into my website and Open AI's API.
 
