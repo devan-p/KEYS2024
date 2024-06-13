@@ -65,6 +65,17 @@
             padding: 10px;
             cursor: pointer;
         }
+
+        #chatbot-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        #clear-button {
+            background-color: red;
+            margin-left: 10px;
+        }
     </style>
 </head>
 
@@ -83,7 +94,10 @@
             </div>
             <div id="chatbot-messages"></div>
             <input type="text" id="chatbot-input" placeholder="Type your message..." />
-            <button onclick="sendMessage()">Send</button>
+            <div id="chatbot-buttons">
+                <button onclick="sendMessage()">Send</button>
+                <button id="clear-button" onclick="clearChat()">Clear Chat</button>
+            </div>
         </div>
     </div>
     <script>
@@ -181,6 +195,11 @@
             const chatbotState = sessionStorage.getItem('chatbotState');
             const chatbotWindow = document.getElementById('chatbot-window');
             chatbotWindow.style.display = chatbotState === 'open' ? 'flex' : 'none';
+        }
+
+        function clearChat() {
+            document.getElementById('chatbot-messages').innerHTML = '';
+            sessionStorage.removeItem('chatbotMessages');
         }
 
         // Manually trigger storage event to load chat history and state on initial page load
