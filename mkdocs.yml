@@ -35,6 +35,13 @@ nav:
 theme:
   name: 'material'
 
+  extra_javascript:
+    - chatbot.js
+
+  extra_css:
+    - chatbot.css
+    - stylesheets/extra.css
+
   # 404 page
   static_templates:
     - 404.html
@@ -130,9 +137,6 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
-extra_css:
-  - stylesheets/extra.css
  
 plugins:
     - search
