@@ -92,50 +92,55 @@
     </div>
     <script>
         // Function to toggle the visibility of the chatbot window
-// Function to toggle the visibility of the chatbot window
-function toggleChatbot() {
-    const chatbotWindow = document.getElementById('chatbot-window');
-    const computedDisplay = window.getComputedStyle(chatbotWindow).display;
-    if (computedDisplay === 'none') {
-        chatbotWindow.style.display = 'flex';
-        localStorage.setItem('chatbotState', 'open');
-    } else {
-        chatbotWindow.style.display = 'none';
-        localStorage.setItem('chatbotState', 'closed');
-    }
-}
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const computedDisplay = window.getComputedStyle(chatbotWindow).display;
+            if (computedDisplay === 'none') {
+                chatbotWindow.style.display = 'flex';
+                sessionStorage.setItem('chatbotState', 'open');
+            } else {
+                chatbotWindow.style.display = 'none';
+                sessionStorage.setItem('chatbotState', 'closed');
+            }
+        }
 
-function closeChatbot() {
-    document.getElementById('chatbot-window').style.display = 'none';
-    localStorage.setItem('chatbotState', 'closed');
-}
+        function closeChatbot() {
+            document.getElementById('chatbot-window').style.display = 'none';
+            sessionStorage.setItem('chatbotState', 'closed');
+        }
 
-// Add event listener for Enter key on the input field
-document.addEventListener('DOMContentLoaded', function() {
-    // Set the chatbot state based on the stored state
-    const chatbotState = localStorage.getItem('chatbotState');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    if (chatbotState === 'open') {
-        chatbotWindow.style.display = 'flex';
-    } else {
-        chatbotWindow.style.display = 'none';
-    }
+        // Add event listener for Enter key on the input field
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the chatbot state based on the stored state
+            const chatbotState = sessionStorage.getItem('chatbotState');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            if (chatbotState === 'open') {
+                chatbotWindow.style.display = 'flex';
+            } else {
+                chatbotWindow.style.display = 'none';
+            }
 
-    document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault(); // Prevent the default action
-            sendMessage();          }
-    });
-});
-    
+            loadChatHistory();
+
+            document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent the default action
+                    sendMessage();
+                }
+            });
+        });
+
         // Function to send a message
         async function sendMessage() {
             const input = document.getElementById('chatbot-input');
             const message = input.value;
-            input.value = '';
-            appendMessage(message, 'user');
-            appendMessage('Message received', 'bot');
-            // You might want to add your logic for sending the message to the server here
+            if (message.trim() !== '') {
+                input.value = '';
+                appendMessage(message, 'user');
+                appendMessage('Message received', 'bot');
+                // Add your logic for sending the message to the server here
+                saveChatHistory();
+            }
         }
 
         // Function to append a message to the chat window
@@ -145,39 +150,56 @@ document.addEventListener('DOMContentLoaded', function() {
             messageElement.textContent = `${sender.charAt(0).toUpperCase() + sender.slice(1)}: ${message}`;
             messageElement.className = sender;
             messages.appendChild(messageElement);
+            messages.scrollTop = messages.scrollHeight; // Scroll to the bottom
         }
 
-    window.addEventListener('load', function() {
-    const chatbotState = localStorage.getItem('chatbotState');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    if (chatbotState === 'open') {
-        chatbotWindow.style.display = 'flex';
-    } else {
-        chatbotWindow.style.display = 'none';
-    }
-});
-
-
-
-    // Create a MutationObserver instance
-    const observer = new MutationObserver(function() {
-        // Set the chatbot state based on the stored state
-        const chatbotState = localStorage.getItem('chatbotState');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        if (chatbotState === 'open') {
-            chatbotWindow.style.display = 'flex';
-        } else {
-            chatbotWindow.style.display = 'none';
+        // Function to save chat history to sessionStorage
+        function saveChatHistory() {
+            const messages = document.getElementById('chatbot-messages').innerHTML;
+            sessionStorage.setItem('chatbotMessages', messages);
         }
-    });
 
-    // Start observing the document with the configured parameters
-    observer.observe(document, { childList: true, subtree: true });
+        // Function to load chat history from sessionStorage
+        function loadChatHistory() {
+            const messages = sessionStorage.getItem('chatbotMessages');
+            if (messages) {
+                document.getElementById('chatbot-messages').innerHTML = messages;
+            }
+        }
 
+        // Monitor for changes in the chat history and save to sessionStorage
+        const messagesObserver = new MutationObserver(saveChatHistory);
+        const messagesContainer = document.getElementById('chatbot-messages');
+        messagesObserver.observe(messagesContainer, { childList: true, subtree: true });
 
+        // Create a MutationObserver instance
+        const observer = new MutationObserver(function() {
+            // Set the chatbot state based on the stored state
+            const chatbotState = sessionStorage.getItem('chatbotState');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            if (chatbotState === 'open') {
+                chatbotWindow.style.display = 'flex';
+            } else {
+                chatbotWindow.style.display = 'none';
+            }
+        });
+
+        // Start observing the document with the configured parameters
+        observer.observe(document, { childList: true, subtree: true });
+
+        // Load chat history and state when navigating without full reload
+        window.addEventListener('load', () => {
+            const chatbotState = sessionStorage.getItem('chatbotState');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            if (chatbotState === 'open') {
+                chatbotWindow.style.display = 'flex';
+            } else {
+                chatbotWindow.style.display = 'none';
+            }
+            loadChatHistory();
+        });
 
     </script>
     {% endblock %}<!-- Include the chatbot script -->
-
-    </body>
-    </html>
+</body>
+</html>
