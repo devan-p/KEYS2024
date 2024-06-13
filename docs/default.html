@@ -1,34 +1,19 @@
+<!-- main.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="chatbot.css">
-  <!-- Add any other head elements you need -->
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ 'chatbot.css' | relative_url }}">
+    <!-- Include other head elements here -->
 </head>
 <body>
-  <!-- Chatbot HTML -->
-  <div id="chatbot-icon" onclick="toggleChatbot()">
-      <span>Chat!</span>
-  </div>
-  <div id="chatbot-window">
-      <div id="chatbot-header">
-          <span>Have any questions?</span>
-          <button onclick="closeChatbot()">X</button>
-      </div>
-      <div id="chatbot-messages"></div>
-      <input type="text" id="chatbot-input" placeholder="Type your message..." />
-      <button onclick="sendMessage()">Send</button>
-  </div>
+    <!-- Include your site header and navigation here -->
 
-  <!-- Main Content -->
-  <div id="content">
-    {{ content }}
-  </div>
+    {% block content %}
+    {% endblock content %}
 
-  <!-- Chatbot JavaScript -->
-  <script src="chatbot.js"></script>
-  <!-- Any other scripts you need -->
+    <!-- Include the chatbot script -->
+    <script src="{{ 'chatbot.js' | relative_url }}"></script>
 </body>
 </html>
