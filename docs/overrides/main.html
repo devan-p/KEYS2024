@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-            sendMessage();
-        }
+            e.preventDefault(); // Prevent the default action
+            sendMessage();          }
     });
 });
     
@@ -133,15 +133,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('chatbot-input');
             const message = input.value;
             input.value = '';
-            appendMessage(message);
+            appendMessage(message, 'user');
+            appendMessage('Message received', 'bot');
             // You might want to add your logic for sending the message to the server here
         }
-    
+
         // Function to append a message to the chat window
-        function appendMessage(message) {
+        function appendMessage(message, sender) {
             const messages = document.getElementById('chatbot-messages');
             const messageElement = document.createElement('div');
-            messageElement.textContent = message;
+            messageElement.textContent = `${sender.charAt(0).toUpperCase() + sender.slice(1)}: ${message}`;
+            messageElement.className = sender;
             messages.appendChild(messageElement);
         }
 
