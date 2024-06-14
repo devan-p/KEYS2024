@@ -1,14 +1,15 @@
-Certainly! Here's the fixed formatting for your markdown file to ensure all the code appears correctly on the webpage:
+# Prompt Engineering Documentation
 
-```markdown
 ## 6/13/2024 Adding Chatbot to every website page
 
 ### GPT-4o
+```markdown
+Prompt:
 > can you change the following code so that the website will load chat history whenever the url changes. example when the url changes from http://127.0.0.1:8000/KEYS2024/poster/ to http://127.0.0.1:8000/KEYS2024/github/ it will reload the chat history
 
 Code:
 
-```html
+html
 <!DOCTYPE html>
 <html>
 <head>
@@ -378,14 +379,14 @@ Output:
 </html>
 ```
 
-### Key Changes:
-
-1. **Event Listeners**:
-   - Added an event listener for the `popstate` event to detect URL changes due to navigation.
-   - Added an event listener for the `storage` event to sync chat history across different tabs or pages.
-
-2. **Manual Trigger**:
-   - Manually triggered the `storage` event on page load to ensure chat history and state are loaded initially.
-
-These changes should ensure that the chat history is loaded correctly whenever the URL changes, without requiring a manual page reload.
+> Key Changes:
+>
+> 1. **Event Listeners**:
+>   - Added an event listener for the `popstate` event to detect URL changes due to navigation.
+>   - Added an event listener for the `storage` event to sync chat history across different tabs or pages.
+>
+> 2. **Manual Trigger**:
+>   - Manually triggered the `storage` event on page load to ensure chat history and state are loaded initially.
+>
+> These changes should ensure that the chat history is loaded correctly whenever the URL changes, without requiring a manual page reload.
 ```
