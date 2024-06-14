@@ -1,4 +1,4 @@
-## Assignment 2: Introduction to your Research
+## Assignment 2: Research Introduction
 
 ### Purpose & Prior Research: 
 

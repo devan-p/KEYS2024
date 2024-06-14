@@ -11,7 +11,6 @@ edit_uri: edit/main/docs/
 # Copyright
 copyright: 'Copyright &copy; 2024 Arizona Board of Regents'
 
-
 # Page tree
 nav:
   - Introduction: index.md
@@ -20,7 +19,7 @@ nav:
   - KEYS 2024 Main Project: 
     - Poster: poster.md
     - Project Description: assignment1.md
-    - Assignment 2: assignment2.md
+    - Research Introduction: assignment2.md
     - Assignment 3: assignment3.md
     - Assignment 4: assignment4.md
     - Assignment 5: assignment5.md
@@ -36,16 +35,15 @@ theme:
   name: 'material'
 
   extra_javascript:
-    - docs/chatbot.js
+    - chatbot/chatbot.js
 
   extra_css:
-    - dpcs/chatbot.css
+    - chatbot/chatbot.css  # Corrected typo
     - stylesheets/extra.css
 
   # 404 page
   static_templates:
     - 404.html
-    - chatbot.html
 
   # Don't include MkDocs' JavaScript
   include_search_page: false
@@ -92,7 +90,7 @@ theme:
         name: Switch to system preference
 # Options
 extra:
-  chatbot: docs/chatbot.html
+  chatbot: chatbot/chatbot.html  # Correct path for chatbot.html
 
   social:
 #    - icon: fontawesome/brands/github
