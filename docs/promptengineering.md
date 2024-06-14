@@ -1,6 +1,5 @@
 Here is the formatted markdown code with the lines after "Prompt" and "Output" appearing with the same formatting:
 
-```markdown
 # Prompt Engineering Documentation
 
 ## 6/13/2024 Adding Chatbot to every website page
@@ -11,7 +10,7 @@ Prompt:
 ```html
 
 Code:
-
+```markdown
 html
 <!DOCTYPE html>
 <html>
