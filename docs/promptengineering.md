@@ -2,9 +2,8 @@ Here is the formatted markdown code with the lines after "Prompt" and "Output" a
 
 # Prompt Engineering Documentation
 
-## 6/13/2024 Adding Chatbot to every website page
+## 6/13/2024 Adding Chatbot to every website page (GPT-4o)
 
-### GPT-4o
 Prompt:
 > can you change the following code so that the website will load chat history whenever the url changes. example when the url changes from http://127.0.0.1:8000/KEYS2024/poster/ to http://127.0.0.1:8000/KEYS2024/github/ it will reload the chat history
 ```html

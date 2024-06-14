@@ -1,8 +1,8 @@
 # KEYS Assignments 
 
-[Assignment 1](assignment1.md)
+[Internship Description](assignment1.md)
 
-[Assignment 2](assignment1.md)
+[Research Introduction](assignment1.md)
 
 [Assignment 3](assignment1.md)
 
