@@ -194,7 +194,7 @@ html
 Output:
 > To ensure that the chat history is loaded whenever the URL changes, you can listen to the `popstate` event for browser navigation and `storage` event to sync data across different tabs or pages. Here is the modified code to achieve this:
 
-```markdown
+```html
 <!DOCTYPE html>
 <html>
 <head>
