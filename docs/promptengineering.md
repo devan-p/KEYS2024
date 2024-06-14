@@ -5,7 +5,7 @@
 ### GPT-4o
 Prompt:
 > can you change the following code so that the website will load chat history whenever the url changes. example when the url changes from http://127.0.0.1:8000/KEYS2024/poster/ to http://127.0.0.1:8000/KEYS2024/github/ it will reload the chat history
-```markdown
+```html
 
 Code:
 
