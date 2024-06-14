@@ -1,3 +1,6 @@
+Here is the formatted markdown code with the lines after "Prompt" and "Output" appearing with the same formatting:
+
+```markdown
 # Prompt Engineering Documentation
 
 ## 6/13/2024 Adding Chatbot to every website page
@@ -237,30 +240,30 @@ Output:
             padding: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center.
         }
 
         #chatbot-messages {
             flex: 1;
             padding: 10px;
             overflow-y: auto;
-            border-top: 1px solid #4051B5;
+            border-top: 1px solid #4051B5.
         }
 
         #chatbot-input {
             border: none;
-            border-top: 1px solid black;
-            padding: 10px;
-            width: calc(100% - 60px);
-            border-radius: 10px;
+            border-top: 1px solid black.
+            padding: 10px.
+            width: calc(100% - 60px).
+            border-radius: 10px.
         }
 
         #chatbot-window button {
-            border: none;
-            background-color: #4051B5;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
+            border: none.
+            background-color: #4051B5.
+            color: white.
+            padding: 10px.
+            cursor: pointer.
         }
     </style>
 </head>
@@ -287,10 +290,10 @@ Output:
         document.addEventListener('DOMContentLoaded', function() {
             initializeChatbot();
 
-            document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
-                if (e.key === 'Enter
+            document.getElementById('chatbot-input').addEventListener('keypress', function (
 
-') {
+e) {
+                if (e.key === 'Enter') {
                     e.preventDefault();
                     sendMessage();
                 }
@@ -350,7 +353,7 @@ Output:
             messageElement.textContent = `${sender.charAt(0).toUpperCase() + sender.slice(1)}: ${message}`;
             messageElement.className = sender;
             messages.appendChild(messageElement);
-            messages.scrollTop = messages.scrollHeight;
+            messages.scrollTop = messages.scrollHeight.
         }
 
         function saveChatHistory() {
