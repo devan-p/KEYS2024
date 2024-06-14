@@ -4,7 +4,8 @@
 > can you change the following code so that the website will load chat history whenever the url changes. example when the url changes from http://127.0.0.1:8000/KEYS2024/poster/ to http://127.0.0.1:8000/KEYS2024/github/ it will reload the chat history
 
 Code:
-> <!DOCTYPE html>
+
+> ```<!DOCTYPE html>
 > <html>
 > <head>
 >     <meta charset="utf-8">
@@ -182,7 +183,8 @@ Code:
 >     </script>
 >     {% endblock %}
 > </body>
-> </html>
+> </html>```
+
 
 Output:
 >> To ensure that the chat history is loaded whenever the URL changes, you can listen to the `popstate` event for browser navigation and `storage` event to sync data across different tabs or pages. Here is the modified code to achieve this:
