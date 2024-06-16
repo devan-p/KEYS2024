@@ -108,7 +108,7 @@
         const data = {
             model: "gpt-3.5-turbo", // Specify the model to use
             messages: [{ role: "user", content: message }], // Use 'messages' instead of 'prompt'
-            max_tokens: 60
+            max_tokens: 60 
         };
 
         console.log('Sending request with data:', data);  // Debug: Log the data being sent
@@ -124,7 +124,7 @@
                 return response.data.choices[0].message.content.trim();
             } else {
                 console.error('Unexpected API response structure', response.data);
-                return 'Sorry, I couldn’t understand that.';
+                return 'Sorry,I couldn’t understand that.';
             }
         }).catch(error => {
             console.error('API call failed:', error);
