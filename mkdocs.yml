@@ -26,7 +26,7 @@ nav:
     - Assignment 6: assignment6.md
     - Acknowledgments: acknowledgments.md
     - References: references.md
-  - Resources:
+  - Documentation:
     - Chatbot Documentation: github.md
     - Prompt Engineering: promptengineering.md
 
@@ -34,11 +34,7 @@ nav:
 theme:
   name: 'material'
 
-  extra_javascript:
-    - chatbot/chatbot.js
-
   extra_css:
-    - chatbot/chatbot.css  # Corrected typo
     - stylesheets/extra.css
 
   # 404 page
@@ -90,7 +86,6 @@ theme:
         name: Switch to system preference
 # Options
 extra:
-  chatbot: chatbot/chatbot.html  # Correct path for chatbot.html
 
   social:
 #    - icon: fontawesome/brands/github
