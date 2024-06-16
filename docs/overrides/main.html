@@ -41,6 +41,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 50px; /* Set the height of the header */
         }
 
         #chatbot-messages {
@@ -55,30 +56,33 @@
             border-top: 1px solid black;
             padding: 10px;
             width: calc(100% - 60px);
-            border-radius: 10px;
-        }
-
-        #chatbot-window button {
-            border: none;
-            background-color: #4051B5;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
         }
 
         #chatbot-buttons {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
+            padding: 0; /* Remove padding to make buttons full width */
+        }
+
+        #chatbot-buttons button {
+            border: none;
+            background-color: #4051B5;
+            color: white;
+            cursor: pointer;
+            flex: 1;
+            height: 50px; /* Match the height of the header */
+        }
+
+        #chatbot-buttons #divider {
+            width: 2px;
+            background-color: black;
         }
 
         #clear-button {
             background-color: red;
-            margin-left: 10px;
         }
     </style>
 </head>
-
 <body>
     {% extends "base.html" %}
     {% block content %}
@@ -96,6 +100,7 @@
             <input type="text" id="chatbot-input" placeholder="Type your message..." />
             <div id="chatbot-buttons">
                 <button onclick="sendMessage()">Send</button>
+                <div id="divider"></div>
                 <button id="clear-button" onclick="clearChat()">Clear Chat</button>
             </div>
         </div>
@@ -109,12 +114,6 @@
                     e.preventDefault();
                     sendMessage();
                 }
-            });
-
-            // Listen to URL changes
-            window.addEventListener('popstate', function() {
-                loadChatHistory();
-                loadChatbotState();
             });
 
             // Listen to storage events to sync chat history across tabs/pages

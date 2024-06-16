@@ -27,7 +27,7 @@ nav:
     - Acknowledgments: acknowledgments.md
     - References: references.md
   - Resources:
-    - GitHub: github.md
+    - Chatbot Documentation: github.md
     - Prompt Engineering: promptengineering.md
 
 # Configuration
