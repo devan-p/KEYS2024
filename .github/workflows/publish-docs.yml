@@ -1,4 +1,4 @@
-name: Publish docs via GitHub
+name: Publish docs via GitHub Pages
 on:
   push:
     branches:
@@ -18,10 +18,11 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - name: run requirements file
-        run:  pip install -r requirements.txt 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Replace GPT API key in chatbot.html
+        run: sed -i 's|GPT_API_KEY_HERE|${{ secrets.GPT_API_KEY_HERE }}|g' docs/overrides/chatbot.html
       - name: Deploy docs
         run: mkdocs gh-deploy --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GPT_API_KEY_HERE: ${{ secrets.GPT_API_KEY_HERE }}

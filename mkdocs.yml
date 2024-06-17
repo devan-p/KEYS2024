@@ -1,29 +1,142 @@
-name: Publish docs via GitHub
-on:
-  push:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  build:
-    name: Deploy docs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
-      - uses: actions/cache@v2
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Replace GPT API key in chatbot.html
-        run: |
-          sed -i 's|GPT_API_KEY_HERE|${{ secrets.GPT_API_KEY }}|g' docs/chatbot.html
-      - name: Deploy docs
-        run: mkdocs gh-deploy --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# Header 
+site_name: KEYS Research Internship
+site_description: KEYS Research Internship
+site_author: Devan Patel
+site_url: https://devan-p.github.io/KEYS2024/ 
+
+# Footer
+repo_name: KEYS2024
+repo_url: https://github.com/devan-p/KEYS2024
+edit_uri: edit/main/docs/
+# Copyright
+copyright: 'Copyright &copy; 2024 Arizona Board of Regents'
+
+# Page tree
+nav:
+  - Introduction: index.md
+  - Logbook: logbook.md
+  - Assignments: keysassignments.md
+  - KEYS 2024 Main Project: 
+    - Poster: poster.md
+    - Project Description: assignment1.md
+    - Research Introduction: assignment2.md
+    - Assignment 3: assignment3.md
+    - Assignment 4: assignment4.md
+    - Assignment 5: assignment5.md
+    - Assignment 6: assignment6.md
+    - Acknowledgments: acknowledgments.md
+    - References: references.md
+  - Documentation:
+    - Chatbot Documentation: github.md
+    - Prompt Engineering: promptengineering.md
+
+# Configuration
+theme:
+  name: 'material'
+
+  extra_css:
+    - stylesheets/extra.css
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  palette:
+    scheme: keys
+    primary: blue
+    accent: orange
+  font:
+    text: 'Open Sans'
+    code: 'Roboto Mono'
+  logo: 'assets/uarizona.png'
+  favicon: 'assets/favicon.ico'
+# setting features for the navigation tab
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  custom_dir: 'docs/overrides'
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: white)"
+      primary: 'white'
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
+# Options
+extra:
+
+  social:
+#    - icon: fontawesome/brands/github
+#      link: https://github.com/[your-githhub-username]
+#    - icon: fontawesome/brands/twitter
+#      link: https://twitter.com/[your-twitter-username]
+#    - icon: fontawesome/brands/linkedin
+#      link: https://www.linkedin.com/in/[your-linkedin-username]
+#    - icon: fontawesome/brands/orcid
+#      link: https://orcid.org/[your-orcid-id]
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+ 
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    - mkdocs-jupyter:
+          include_source: True
+          ignore_h1_titles: True
