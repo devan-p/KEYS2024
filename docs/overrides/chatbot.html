@@ -115,7 +115,7 @@
 
         return axios.post('https://api.openai.com/v1/chat/completions', data, {
             headers: {
-                'Authorization': `Bearer ${process.env.GPT_API_KEY_HERE}`,  // Replace with your actual API key
+                'Authorization': `Bearer GPT_API_KEY_HERE`,  // Placeholder replaced by GitHub Actions
                 'Content-Type': 'application/json'
             }
         }).then(response => {
