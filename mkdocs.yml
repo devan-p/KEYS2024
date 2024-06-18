@@ -30,7 +30,7 @@ nav:
     - Chatbot Documentation: github.md
     - Prompt Engineering: promptengineering.md
   - Chatbot:
-    - Chatbot: chatbot.md
+    - Chatbot: iframechatbot.md
 
 # Configuration
 theme:
