@@ -295,9 +295,9 @@ window.dispatchEvent(new Event('storage'));
 └── requirements.txt  
 ```    
 
-### Necessary Files & Code:  
+### Necessary Files & Code  
 
-#### mkdocs.yml:  
+#### mkdocs.yml   
 
 ```yml
 theme:
@@ -305,7 +305,7 @@ theme:
 ```
 > The rest of mkdocs.yml is not shown.  
 
-#### main.html:  
+#### main.html  
 
 ```html
 {% extends "base.html" %}
@@ -323,7 +323,7 @@ theme:
 ```
 > All of main.html is shown.  
 
-#### chatbot.html:
+#### chatbot.html
 
 ```html
 chatbot.html:

@@ -83,6 +83,14 @@ I met with Dr. Swetnam this morning and we discussed methods to embed the chatbo
 
 I had my morning stand-up call. Afterwords I worked on making the chatbot's UI more visually appealing. Then, I added [documentation for all of the chatbot's code](github.mb){target=_blank}. Afterwards I completed my [2nd KEYS assignment](assignment2.md){target=_blank}. I got feedback from Dr. Swetnam and made changes to my "Need for study and problem statement" section. I finished drafting the introduction section of my research poster and brainstormed visuals to add to the poster. I submitted this assignment. I also added [documentation of all my chatbot code and how I implemented it](github.md){target=_blank}. I added some updates to [my project's task tracker](https://github.com/orgs/cyverse/projects/8/views/1){target=_blank}. I got the chatbot working with GPT-3.5-turbo locally. I ran into some errors while attempting to use Github secrets for API keys to run it on Github pages.
 
+
+### 6/17/2024
+
+Today I tried to get the chatbot to with with OpenAI's API publically. I could not accomplish this using github pages and github secrets to store my API key because github pages is a static site. I spent some time with Dr. Swetnam downloading University of Arizona's VPN and connecting to a CyVerse VM. After I got connected I played around with the CyVerse chatbot and tried to learn about how it functioned. I changed the API assistant key to a newer version for GPT-4o. This led to errors caused by a documentation change to v2. I spent some time changing code and attempting to resolve these errors, however, they still remained. I took a break and read documentation about OpenAI's API, and how to effectively use a custom assistant.
+
+
+
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 
