@@ -29,6 +29,8 @@ nav:
   - Documentation:
     - Chatbot Documentation: github.md
     - Prompt Engineering: promptengineering.md
+  - Chatbot:
+    - Chatbot: chatbot.md
 
 # Configuration
 theme:
