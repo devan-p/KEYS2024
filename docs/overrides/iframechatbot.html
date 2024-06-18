@@ -28,7 +28,7 @@
             position: fixed;
             bottom: 80px;
             right: 20px;
-            width: 40%;
+            width: 25%;
             height: 500px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
@@ -67,11 +67,15 @@
 </div>
 
 <script>
-    // Add your JavaScript here
-    document.addEventListener("DOMContentLoaded", function() {
+    // Function to set up event listeners
+    function setUpEventListeners() {
         const chatIcon = document.getElementById("chatIcon");
         const chatPopup = document.getElementById("chatPopup");
         const closeBtn = document.getElementById("closeBtn");
+
+        if (!chatIcon || !chatPopup || !closeBtn) {
+            return;
+        }
 
         // Function to toggle the chat popup
         function toggleChatPopup() {
@@ -97,7 +101,20 @@
 
         // Initialize chat popup state on page load
         toggleChatPopup();
+    }
+
+    document.addEventListener("DOMContentLoaded", setUpEventListeners);
+
+    // Use MutationObserver to detect changes in the DOM and reapply event listeners
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                setUpEventListeners();
+            }
+        });
     });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 </script>
 
 </body>
