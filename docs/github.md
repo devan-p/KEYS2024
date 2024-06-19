@@ -1,4 +1,6 @@
-# Chatbot Documentation
+# Chatbot V1 Documentation  
+
+> This chatbot appeared as an icon which could be toggled on/off. When it was toggled on, a chatbot pop-up would appear in the bottom right corner of the page. This chatbot was able to get input text from the user, process it, and output text back to the user. This chatbot failed when connecting with OpenAI's API. Due to this website running on github pages, OpenAI's API keys could not be used because they could be accessable by a user. This remained true when storing the API key as a github secret.
 
 ## Code Documentation
 
