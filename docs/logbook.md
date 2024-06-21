@@ -97,7 +97,7 @@ Today I got my github pages chatbot to communicate with a custom GPT-4o assistan
 
 ### 6/20/2024
 
-We had science seminars this morning. I learned about the method section of our research posters, and how to make an elevator pitch. I spent some time planning how to approach creating a cron job and RAG system to train the GPT-4o assistant on data. I created a local python script to test the RAG functions to manage files attached to our custom assistant. 
+We had science seminars this morning. I learned about the method section of our research posters, and how to make an elevator pitch. I spent some time planning how to approach creating a cron job and RAG system to train the GPT-4o assistant on data. I created a local python script to test the RAG functions to manage files attached to our custom assistant. Now, I need to determine where to deploy these scripts.
 
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
