@@ -99,6 +99,11 @@ Today I got my github pages chatbot to communicate with a custom GPT-4o assistan
 
 We had science seminars this morning. I learned about the method section of our research posters, and how to make an elevator pitch. I spent some time planning how to approach creating a cron job and RAG system to train the GPT-4o assistant on data. I created a local python script to test the RAG functions to manage files attached to our custom assistant. Now, I need to determine where to deploy these scripts.
 
+
+### 6/21/2024
+
+This morning I met with Dr. Swetnam. He told me methods to ingest website data into OpenAI's Assistant. I started working on documentation for implementing the chatbot. The only step I have left is deleting files from OpenAI's Vector Store. OpenAI charges CyVerse for the files stored on their platform so in order to conserve storage, I need to delete files that are no longer in use when the files get updated. I created a flowchart of my materials and methods and wrote my materials and methods write up. I also made some adjustments to my final poster.
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 
