@@ -4,7 +4,7 @@
 
 [Research Introduction](assignment2.md)
 
-[Assignment 3](assignment3.md)
+[Materians and Methods](assignment3.md)
 
 [Assignment 4](assignment4.md)
 
