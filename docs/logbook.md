@@ -115,6 +115,11 @@ I finalized all the code for my project. I tested everything locally: deleting s
 Today I cloned CyVerse Learning Foss into my github page. I kept getting an error about its deployment. Eventually, I fixed it and then had an error where my github pages site would display the read me file instead of the webpage. I realized this was because of my github action settings. I fixed this and got the website hosted in my github pages website. I then added my chatbot code and made it fully functional across every page. I modified the chat-qa VM to work with cyverse-learning-foss's data. I changed the python file to continuously update the chatbot's files with a cloned version of the foss repo. I also modified the .css code in my chatbot which made the background transparent. I changed it to make my chatbot background solid white.
 
 
+### 6/27/2024
+
+This morning I met with Dr. Swetnam to discuss the CyVerse learning foss website. He requested various changes to my CyVerse Learning Foss Website. I changed the chatbox's appearance on my personal website and the learning page to ensure it scales properly on mobile devices. I added a chatbot page to the CyVerse learning foss page. I modified the chatbot's text to appear more similar to the website's text. I made some minor changes to the chatbot's UI including the red close button to be more visually appealing. I researched Lite LLM and briefly discussed it with Edwin Skidmore. He shared an OpenAI API KEY with me to connect my chatbot with Lite LLM. I implemented this key. I also made changes to the chatbot's responses. First, I changed the chatbot's instructions to ensure all materials are cited. I modified the chatbot code to process the chatbot's references to be understandable to the user. I also added some code to modify the references to make them easily found on the target website.
+
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 
