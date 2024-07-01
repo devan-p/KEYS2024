@@ -120,6 +120,11 @@ Today I cloned CyVerse Learning Foss into my github page. I kept getting an erro
 This morning I met with Dr. Swetnam to discuss the CyVerse learning foss website. He requested various changes to my CyVerse Learning Foss Website. I changed the chatbox's appearance on my personal website and the learning page to ensure it scales properly on mobile devices. I added a chatbot page to the CyVerse learning foss page. I modified the chatbot's text to appear more similar to the website's text. I made some minor changes to the chatbot's UI including the red close button to be more visually appealing. I researched Lite LLM and briefly discussed it with Edwin Skidmore. He shared an OpenAI API KEY with me to connect my chatbot with Lite LLM. I implemented this key. I also made changes to the chatbot's responses. First, I changed the chatbot's instructions to ensure all materials are cited. I modified the chatbot code to process the chatbot's references to be understandable to the user. I also added some code to modify the references to make them easily found on the target website.
 
 
+
+### 6/28/2024
+
+Today I made some changes to the chatbot. I tested various methods to get the chatbot to provide the user with links to its' cited sources. Previously the chatbot would cite the file name. I discovered that modifying the chatbot's instructions and providing it with an example led to the chatbot citing links for sources. However, this would fail when the chatbot is told to provide hyperlinks. I am not sure why this is happening and I'll read about it. I also disovered an error with the cron job -- althought it is set up, it is not running the python file to update OpenAI's files. I finished my assignments due Monday (results).
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 
