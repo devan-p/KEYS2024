@@ -125,6 +125,12 @@ This morning I met with Dr. Swetnam to discuss the CyVerse learning foss website
 
 Today I made some changes to the chatbot. I tested various methods to get the chatbot to provide the user with links to its' cited sources. Previously the chatbot would cite the file name. I discovered that modifying the chatbot's instructions and providing it with an example led to the chatbot citing links for sources. However, this would fail when the chatbot is told to provide hyperlinks. I am not sure why this is happening and I'll read about it. I also disovered an error with the cron job -- althought it is set up, it is not running the python file to update OpenAI's files. I finished my assignments due Monday (results).
 
+
+
+### 7/1/2024
+
+Today I had some bugs and issues to resolve. First, I fixed a mermaid diagram on my assignment 3 page. The diagram had displayed 2 boxes on the same row, however, I wanted esach box to have its row in order for them to appear in a vertical column. I tweaked the code to resolve this. Next, my chatbot still would not provide hyperlinks to websites it cited. After many many changes to its' instructions and testing various GPT models, I determined my best shot was with GPT-4o, and eventually fixed this. I also realized that my cron job had not been running consistantly, it had not been running at all! Althought it was setup, it did not run my python-file-updater script as intended, therefore, the chatbot was not trained on the most recent information. I read about proper implementations of cron jobs and fixed this error. I also completed my KEYS Reflection #4.
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 
