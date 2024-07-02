@@ -11,7 +11,7 @@ flowchart TD
 
     A --> B
     B --> C
-    D --> C
+    C --> D
 </div>
 
 <script type="module">
