@@ -323,6 +323,7 @@ theme:
 {% include "chatbot.html" %}
 {% endblock content %}
 ```
+
 > All of main.html is shown.  
 
 #### chatbot.html
