@@ -131,6 +131,12 @@ Today I made some changes to the chatbot. I tested various methods to get the ch
 
 Today I had some bugs and issues to resolve. First, I fixed a mermaid diagram on my assignment 3 page. The diagram had displayed 2 boxes on the same row, however, I wanted esach box to have its row in order for them to appear in a vertical column. I tweaked the code to resolve this. Next, my chatbot still would not provide hyperlinks to websites it cited. After many many changes to its' instructions and testing various GPT models, I determined my best shot was with GPT-4o, and eventually fixed this. I also realized that my cron job had not been running consistantly, it had not been running at all! Althought it was setup, it did not run my python-file-updater script as intended, therefore, the chatbot was not trained on the most recent information. I read about proper implementations of cron jobs and fixed this error. I also completed my KEYS Reflection #4.
 
+
+
+### 7/2/2024, 7/3/2024
+After testing my chatbot I found an error with its' citations. My chatbot was trained on citing "https://foss.cyverse.org/08_reproducibility_III/" which has capital I's. However, the official website for Cyverse Foss has lower case I's for: https://foss.cyverse.org/06_reproducibility_i/ and https://foss.cyverse.org/07_reproducibility_ii/. This caused an error where my chatbot would generate links using only capital I's which caused broken links to be added as citations. I messaged Dr. Swetnam and Tony Edgin about changing Cyverse Foss to make these URLs uniform. Dr. Swetnam pointed out an issue with the hyperlinks. When a hyperlink was clicked, it would open the webpage within its' iframe, replacing the chatbot screen. I read some articles about resolving this [1](https://www.webhostingtalk.com/showthread.php?t=678138){target=_blank} [2](https://stackoverflow.com/questions/19759880/open-iframe-in-a-new-window){target=_blank}, however, neither helped me. I eventually talked with ChatGPT about my code and it gave me a solution. It recommended modifying the code on the chatbot's VM to embed "target=_blank" after each hyperlink. I made this modification and now the hyperlinks are functioning properly.
+
+
 <!-- [Daily Logs] -- short (5-6 sentence) summary of your daily activities that includes: (1) what was the plan?, (2) what actually happend?, (3) what could you have done better?, (4) how you will approach this differently next time?  -->
 
 

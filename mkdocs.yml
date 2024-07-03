@@ -28,7 +28,7 @@ nav:
     - References: references.md
   - Documentation:
     - Chatbot Documentation V1: chatbot_documentation_v1.md
-    - Chatbot Documentation Final: chatbot_documentation_final.md
+    - Chatbot Documentation V2: chatbot_documentation_v2.md
     - Prompt Engineering: promptengineering.md
   - Chatbot:
     - Chatbot: iframechatbot.md
