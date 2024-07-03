@@ -1,4 +1,5 @@
 # Chatbot Documentation Cyverse FOSS
+updated: 7/2/2024
 
 > This is a fully functional implementation of the chatbot. This chatbot appeared as an icon which could be toggled on/off. When it was toggled on, a chatbot pop-up would appear in the bottom right corner of the page. This chatbot was able to get input text from the user, process it, and output text back to the user. The chatbot cited an uploaded vector store to cite information. This is connected to [Cyverse's FOSS Learning Workshop on my github pages](https://devan-p.github.io/Cyverse-learning-materials-foss/){target=_blank}. The chatbot is trained on the website's files. In all the chatbot's responces, it provides citations and hyperlinks to the webpages which it got information from.
 
@@ -190,6 +191,9 @@ Cyverse-learning-materials-foss/
 > All of iframechatbot.html is shown. This script includes .css .js and .html to manage the chatbot's functionality. The HTML document defines a basic structure with a chat icon and a chat popup window. The chat icon (div with class chat-icon) is always visible and located at the bottom-right corner of the page. The chat popup (div with class chat-popup) contains a close button (button with class close-btn) and an iframe that loads a chat application from a specified URL. The chat icon is styled as a fixed circular button with a blue background and a white chat emoji. The chat popup is styled to be initially hidden, fixed in position, and has a white background with a shadow for a lifted appearance. The iframe within the chat popup takes up the entire popup area. The close button is styled as a small, red circular button positioned at the top-right corner of the chat popup. The JavaScript code manages the visibility of the chat popup and the state of the chat. Event listeners are set up for the chat icon and close button to toggle the visibility of the chat popup. The state of the chat popup (open or closed) is stored in localStorage to maintain the state across page reloads. The MutationObserver monitors the DOM for changes and reapplies event listeners if necessary.
 
 
+## Implementation on VM
+
+
 
 ### Chatbot Updater Script
 ```python
@@ -277,3 +281,9 @@ assistant = openai_client.beta.assistants.update(
 ### Chatbot VM
 
 The [chat service](https://github.com/cyverse/cyverse-gpt){target=_blank} is connected to Open AI's API is hosted on a VM.
+
+
+## Open AI Assistant Settings
+
+GPT-4o
+> Instructions: You are a helpful research assistant. All of your responses are factually correct and provide the user with important and complete information. Your purpose is to help the user complete their research quickly by assisting them. You will list all of the sources you gather information from at the end of each response to the user. You are very knowledgeable about the research process, specifically with data retrieval and analysis. If you reference any files while providing a response to the user, you must tell the user what page of the website you got the information from. All of the files you are trained on are webpages on this website: https://foss.cyverse.org/. For every citation used, identify which webpage on https://foss.cyverse.org/ you got the information from  (do not include .html), an example url of a cited page: 07_reproducibility_ii is cited as https://foss.cyverse.org/07_reproducibility_II/. After your response, provide the user with webpages for all citations. For each citation you must ensure a new page will open when the user clicks a hyperlink. All hyperlinks must open a new tab when clicked.
