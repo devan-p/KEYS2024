@@ -11,3 +11,14 @@ Now, copy the assistant ID (save this for later). The assistant ID is located un
 ### Create a new vector store
 
 Navigate to [OpenAI's storage -> vector store page](https://platform.openai.com/storage/vector_stores){target=_blank}. Click the green "create" button in the top right corner. Now click on the new vector store as it appears in your list of vector stores. Name this vector store. Copy this vector store's ID (save this for later). This ID is located under its' name.
+
+
+### Connect vector store to assistant
+
+Navigate back to [OpenAI's assistant page](https://platform.openai.com/assistants/){target=_blank}. Click on your new assistant. Scroll to the "Tools" section. Ensure "file search" is toggled on. Click the "+ files" button to the right of file search. Click select Vector Store on the bottom left corner of the pop up. Enter your saved vector store ID here. Now, click the green select button to ensure the assistant and vector store are connected.
+
+## 2. Target website modifications (mkdocs site)
+
+###
+
+
