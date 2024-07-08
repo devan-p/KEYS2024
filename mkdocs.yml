@@ -29,6 +29,7 @@ nav:
   - Documentation:
     - Chatbot Documentation V1: chatbot_documentation_v1.md
     - Chatbot Documentation V2: chatbot_documentation_v2.md
+    - Chatbot Implementation Guide: chatbot_implementation_documentation.md
     - Prompt Engineering: promptengineering.md
   - Chatbot:
     - Chatbot: iframechatbot.md
