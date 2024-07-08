@@ -1,6 +1,6 @@
 # Chatbot Implementation for Markdown Webpage
 
-## 1. OpenAI modifications
+## OpenAI modifications
 ### Create a new assistant
 
 Navigate to [OpenAI's assistant page](https://platform.openai.com/assistants/){target=_blank}. Click the green button in the top right corner that says "create". Click on the new assistant in the list of assistants. Select model: GPT-4o. Create a name. Toggle file search to be on. Set the chatbot's instructions to be the following (replace all brackets with your information):
@@ -17,7 +17,7 @@ Navigate to [OpenAI's storage -> vector store page](https://platform.openai.com/
 
 Navigate back to [OpenAI's assistant page](https://platform.openai.com/assistants/){target=_blank}. Click on your new assistant. Scroll to the "Tools" section. Ensure "file search" is toggled on. Click the "+ files" button to the right of file search. Click select Vector Store on the bottom left corner of the pop up. Enter your saved vector store ID here. Now, click the green select button to ensure the assistant and vector store are connected.
 
-## 3. Target website modifications (mkdocs site)
+## Target website modifications (mkdocs site)
 
 ### Overrides folder
 
