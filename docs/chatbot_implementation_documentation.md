@@ -21,6 +21,87 @@ Navigate back to [OpenAI's assistant page](https://platform.openai.com/assistant
 
 Follow [these instructions](https://github.com/cyverse/cyverse-gpt){target=_blank} by Dr. Swetnam
 
+Create a "python" folder within "src" /home/ubuntu/github/cyverse-gpt/src/python (IMPORTANT: file path may not be exactly accurate, "cyverse-gpt" might be different). Within your python folder, create a file called "chatbot_update.py". Add the following code to this new file. Replace the following: "OpenAi_API_KEY" "Assistant_APIKEY" "Vector_Store_ID" from chatbot_update.py with their real values. Create a folder called "cloned_repo" within "github" (("~/github/cloned_repo/). This is going to be the directory of your target website. This is used to download your github repo containing your website to train the chatbot on. Replace "https://github.com/CyVerse-learning-materials/foss.git" with your https repo URL [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository){target=_blank}. Replace "CyVerse-learning-materials/foss" with your repository name/path. Replace "~/github/cloned_repo/CyVerse-learning-materials/foss/docs" with the desired file path within the cloned repo (path of files to train chatbot on).
+
+### chatbot_update.py:
+```python
+from dotenv import load_dotenv
+load_dotenv()
+import os
+import asyncio
+import openai
+import git
+import shutil
+
+
+# Delete the Cloned Repo directory if it exists
+keys_directory = os.path.expanduser("~/github/cloned_repo/CyVerse-learning-materials")
+if os.path.exists(keys_directory):
+    shutil.rmtree(keys_directory)
+
+# CLONE A REPO IN A FILE PATH
+# Ensure the parent directory exists
+clone_directory = os.path.expanduser("~/github/cloned_repo")
+os.makedirs(clone_directory, exist_ok=True)
+# Clone the repository for data
+repo_url = "https://github.com/CyVerse-learning-materials/foss.git"
+clone_directory_path = os.path.join(clone_directory, "CyVerse-learning-materials/foss")
+git.Repo.clone_from(repo_url, clone_directory_path)
+
+openai_API_KEY = "OpenAi_API_KEY"
+openai_client = openai.OpenAI(api_key=openai_API_KEY)
+files_on_openai = openai_client.files.list()
+assistant = openai_client.beta.assistants.retrieve("Assistant_APIKEY")
+
+# CREATE VECTOR STORE
+# vector_store = openai_client.beta.vector_stores.create(name="ChatBot Vector Store v1")
+
+# Retrieve vector store
+vector_store_id = "Vector_Store_ID"
+vector_store = openai_client.beta.vector_stores.retrieve(vector_store_id)
+
+# RETRIEVE ALL FILE DATA WITHIN RETRIEVED VECTOR STORE
+vector_store_files = openai_client.beta.vector_stores.files.list(vector_store_id=vector_store.id)
+
+# DELETE ALL FILES FROM VECTOR STORE
+for file in vector_store_files.data:
+    file_id = file.id
+    # print(f"Deleting file with id: {file_id}")
+    # openai_client.beta.vector_stores.files.delete(vector_store_id=vector_store.id, file_id=file_id)
+    openai_client.files.delete(file_id=file_id)
+    # print(f"Deleted file with id: {file_id}")
+
+# ADD FILES TO VECTOR STORE
+# Specify the directory path
+directory = "~/github/cloned_repo/CyVerse-learning-materials/foss/docs"
+directory = os.path.expanduser(directory)
+# Get all files in the directory
+file_paths = [os.path.join(directory, file) for file in os.listdir(directory) if file.endswith(".md")]
+# Ensure none of the files are empty
+file_paths = [path for path in file_paths if os.path.getsize(path) > 0]
+# this is the file path of the file to be uploaded
+file_streams = [open(path, "rb") for path in file_paths]
+# this is the file to be uploaded
+file_batch = openai_client.beta.vector_stores.file_batches.upload_and_poll(
+  vector_store_id=vector_store.id, files=file_streams
+)
+for file_stream in file_streams:
+    file_stream.close()
+
+# UPDATE ASSISTANT TO USE THE RETRIEVED VECTOR STORE
+assistant = openai_client.beta.assistants.update(
+  assistant_id=assistant.id,
+  tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
+)
+
+# FILE SETUP 
+
+# pip install openai
+# pip install openai python-dotenv -U -q
+# make sure python is setup
+# make sure all file directories are correct
+```
+
 
 
 ## Target website modifications (mkdocs site)
