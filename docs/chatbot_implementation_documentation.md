@@ -21,7 +21,7 @@ Navigate back to [OpenAI's assistant page](https://platform.openai.com/assistant
 
 Follow [these instructions](https://github.com/cyverse/cyverse-gpt){target=_blank} by Dr. Swetnam
 
-Create a "python" folder within "src" /home/ubuntu/github/cyverse-gpt/src/python (IMPORTANT: file path may not be exactly accurate, "cyverse-gpt" might be different). Within your python folder, create a file called "chatbot_update.py". Add the following code to this new file. Replace the following: "OpenAi_API_KEY" "Assistant_APIKEY" "Vector_Store_ID" from chatbot_update.py with their real values. Create a folder called "cloned_repo" within "github" (("~/github/cloned_repo/). This is going to be the directory of your target website. This is used to download your github repo containing your website to train the chatbot on. Replace "https://github.com/CyVerse-learning-materials/foss.git" with your https repo URL [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository){target=_blank}. Replace "CyVerse-learning-materials/foss" with your repository name/path. Replace "~/github/cloned_repo/CyVerse-learning-materials/foss/docs" with the desired file path within the cloned repo (path of files to train chatbot on).
+Create a "python" folder within "src" /home/ubuntu/github/cyverse-gpt/src/python (IMPORTANT: file path may not be exactly accurate, "cyverse-gpt" might be different). Within your python folder, create a file called "chatbot_update.py". Add the following code to this new file. Replace the following: "OpenAi_API_KEY" "Assistant_APIKEY" "Vector_Store_ID" from chatbot_update.py with their real values. Create a folder called "cloned_repo" within "github" (("~/github/cloned_repo/). This is going to be the directory of your target website. This is used to download your github repo containing your website to train the chatbot on. Replace "https://github.com/CyVerse-learning-materials/foss.git" with your https repo URL [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository){target=_blank}. Replace "CyVerse-learning-materials/foss" with your repository name/path. Replace "~/github/cloned_repo/CyVerse-learning-materials/foss/docs" with the desired file path within the cloned repo (path of files to train chatbot on). 
 
 ### chatbot_update.py:
 ```python
@@ -101,6 +101,19 @@ assistant = openai_client.beta.assistants.update(
 # make sure python is setup
 # make sure all file directories are correct
 ```
+
+
+### Cron Job setup
+While connected to your VM, access your cron jobs, and create a new task.   
+
+in terminal:
+> crontab -e  
+
+Add this line to the bottom of the file (IMPORTANT: may need to change "cyverse-gpt" in the following line depending on your file path):
+> 0 0 * * * /usr/bin/python3 /home/ubuntu/github/cyverse-gpt/src/python/chatbot_update.py  
+
+Confirm the update in terminal:
+> crontabb -l
 
 
 
