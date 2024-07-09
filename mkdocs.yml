@@ -25,11 +25,7 @@ nav:
     - Assignment 5: assignment6.md
     - Acknowledgments: acknowledgments.md
     - References: references.md
-  - Documentation:
-    - Chatbot Documentation V1: chatbot_documentation_v1.md
-    - Chatbot Documentation V2: chatbot_documentation_v2.md
-    - Chatbot Implementation Guide: chatbot_implementation_documentation.md
-    - Prompt Engineering: promptengineering.md
+  - Documentation: keysassignments.md
   - Chatbot:
     - Chatbot: iframechatbot.md
 
