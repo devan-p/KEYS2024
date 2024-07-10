@@ -1,4 +1,4 @@
-# Chatbot Documentation v2
+# Chatbot Documentation
 
 Welcome to the chatbot documentation. This guide will help you set up and use the chatbot efficiently.
 
@@ -6,8 +6,10 @@ Welcome to the chatbot documentation. This guide will help you set up and use th
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Target Website Implementation](#implementation)
-11. [License](#license)
-12. [Contact Information](#contact-information)
+4. [Virtual Machine Code](#vm)
+5. [Open AI Assistant](#open-ai-assistant)
+6. [License](#license)
+7. [Contact Information](#contact-information)
 
 ## Introduction
 
