@@ -4,10 +4,14 @@
 This document provides a comprehensive guide to the implementation of our chatbot, highlighting the key components and their functionalities.
 
 ## Table of Contents
+1. [Introduction](#overview)
 1. [Open AI Initialization](#openai-modifications)
 2. [VM initialization (chatbot server)](#vm-setup)
 3. [Target Website Initialization (mkdocs site)](#target-website-modifications)
 4. [Contact Information](#contact-information)
+
+## Overview
+This document provides a comprehensive guide to the implementation of our chatbot, highlighting the key components and their functionalities.
 
 ## OpenAI modifications
 ### Create a new assistant
@@ -130,7 +134,7 @@ Add this line to the bottom of the file (IMPORTANT: may need to change "cyverse-
 > 0 0 * * * /usr/bin/python3 /home/ubuntu/github/cyverse-gpt/src/python/chatbot_update.py  
 
 Confirm the update in terminal:
-> crontabb -l
+> crontab -l
 
 
 
