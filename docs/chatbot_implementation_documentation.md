@@ -1,5 +1,14 @@
 # Chatbot Implementation for Markdown Website
 
+## Overview
+This document provides a comprehensive guide to the implementation of our chatbot, highlighting the key components and their functionalities.
+
+## Table of Contents
+1. [Open AI Initialization](#openai-modifications)
+2. [VM initialization (chatbot server)](#vm-setup)
+3. [Target Website Initialization (mkdocs site)](#target-website-modifications)
+4. [Contact Information](#contact-information)
+
 ## OpenAI modifications
 ### Create a new assistant
 
@@ -17,7 +26,7 @@ Navigate to [OpenAI's storage -> vector store page](https://platform.openai.com/
 
 Navigate back to [OpenAI's assistant page](https://platform.openai.com/assistants/){target=_blank}. Click on your new assistant. Scroll to the "Tools" section. Ensure "file search" is toggled on. Click the "+ files" button to the right of file search. Click select Vector Store on the bottom left corner of the pop up. Enter your saved vector store ID here. Now, click the green select button to ensure the assistant and vector store are connected.
 
-## VM setup (chatbot server)
+## VM setup
 
 Follow [these instructions](https://github.com/cyverse/cyverse-gpt){target=_blank} by Dr. Swetnam
 
@@ -125,7 +134,7 @@ Confirm the update in terminal:
 
 
 
-## Target website modifications (mkdocs site)
+## Target website modifications
 
 ### Overrides folder
 
@@ -283,3 +292,10 @@ Ensure your mkdocs.yml file has the following:
 theme:
   custom_dir: 'docs/overrides'
 ```
+
+## Contact Information
+
+For any queries or issues, please contact:
+
+- **Name**: Devan Patel
+- **GitHub**: [devan-p](https://github.com/devan-p)
