@@ -17,6 +17,7 @@ This website follows the [FAIR](https://www.go-fair.org/fair-principles/){target
 ### Main Project
 
 [Project Documentation](keysdocumentation.md){target=_blank}
+
 [Poster](poster.md){target=_blank}
 
 ### Daily Logs
