@@ -16,34 +16,13 @@ This website follows the [FAIR](https://www.go-fair.org/fair-principles/){target
 
 ### Main Project
 
-Progress: [Progress Tracker](https://github.com/orgs/cyverse/projects/8/views/1){target=_blank}
-
-### Results
-
-TBD
+[Project Documentation](keysdocumentation.md){target=_blank}
+[Poster](poster.md){target=_blank}
 
 ### Daily Logs
 
 [link to daily logs](logbook.md)
 
-<!-- Include the chatbot HTML -->
-<!-- <div id="chatbot-container">
-    <div id="chatbot-icon" onclick="toggleChatbot()">
-        <span>Chat!</span>
-    </div>
-    <div id="chatbot-window">
-        <div id="chatbot-header">
-            <span>Have any questions?</span>
-            <button onclick="closeChatbot()">X</button>
-        </div>
-        <div id="chatbot-messages"></div>
-        <input type="text" id="chatbot-input" placeholder="Type your message..." />
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
+### Assignments
 
-<!-- Include the CSS file -->
-<!-- <link rel="stylesheet" type="text/css" href="chatbot.css"> -->
-
-<!-- Include the JavaScript file -->
-<!-- <script src="chatbot.js"></script>  -->
+[link to assignments](keysassignments.md)
