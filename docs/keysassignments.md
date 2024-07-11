@@ -6,11 +6,9 @@
 
 [Materials and Methods](assignment3.md)
 
-<!-- [Assignment 4](assignment4.md) -->
+[Long Abstract](assignment5.md)
 
-[Long Abstract Draft](assignment5.md)
-
-[Assignment 6](assignment6.md)
+[Short Abstract and Title](assignment6.md)
 
 [Poster](poster.md)
 
