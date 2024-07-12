@@ -7,6 +7,7 @@ This document provides a comprehensive guide to the implementation of our chatbo
 1. [Introduction](#overview)
 1. [Open AI Initialization](#openai-modifications)
 2. [VM initialization (chatbot server)](#vm-setup)
+3. [Chatbot Setup on VM](#chatbot-vm-setup)
 3. [Target Website Initialization (mkdocs site)](#target-website-modifications)
 4. [Contact Information](#contact-information)
 
@@ -135,6 +136,45 @@ Add this line to the bottom of the file (IMPORTANT: may need to change "cyverse-
 
 Confirm the update in terminal:
 > crontab -l
+
+
+
+## Chatbot VM Setup
+
+### Caddy File & Explanation:
+```
+chat-qa.cyverse.org/chatbot1/* {
+	reverse_proxy localhost:3000
+}
+
+chat-qa.cyverse.org/chatbot2/* {
+	reverse_proxy localhost:3001
+}
+```
+> This can be repeated to have more localhost ports proxied to the public site. In order to implement changes to this you must run:
+```
+sudo caddy reload --config /etc/caddy/Caddyfile
+```
+
+### Modifications for each Chatbot
+
+> Within each node.js app, the following must be completed:
+
+#### package.json
+> Add the following line (modify based on URL in Caddyfile):
+```
+   "homepage": "/chatbot1"
+```
+
+#### terminal commands to setup
+> cd into target directory (modify target port depending on Caddyfile)
+```
+screen -S myserver
+npm run build
+PORT=3001 npm run start&
+```
+> To detach, press Ctrl + A then D
+
 
 
 
