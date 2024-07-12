@@ -15,7 +15,6 @@ copyright: 'Copyright &copy; 2024 Arizona Board of Regents'
 nav:
   - Introduction: index.md
   - Logbook: logbook.md
-  - Assignments: keysassignments.md
   - KEYS 2024 Main Project: 
     - Poster: poster.md
     - Project Description: assignment1.md
@@ -23,11 +22,10 @@ nav:
     - Methods and Materials: assignment3.md
     - Long Abstract: assignment5.md
     - Short Abstract and Title: assignment6.md
-    - Code Documentation: chatbot_documentation_v2.md
-    - Code Implementation: chatbot_implementation_documentation.md
     - Acknowledgments: acknowledgments.md
     - References: references.md
-  - Documentation: keysdocumentation.md
+  - Documentation: chatbot_documentation_v2.md
+  - Implementation: chatbot_implementation_documentation.md
   - Chatbot:
     - Chatbot: iframechatbot.md
 
