@@ -2,6 +2,8 @@
 
 ## Poster:
 
+
+![Project Poster](assets/poster_7_12_2024.jpg)
 [Poster](https://docs.google.com/presentation/d/10GZSwuBQI14HYRvAIDQmfbl0ffm7LoUK/edit?usp=sharing&ouid=101330276015996571503&rtpof=true&sd=true){target=_blank}
 
 ## Research Goal:
